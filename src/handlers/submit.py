@@ -44,6 +44,7 @@ class UpdateQuestionHandler(BaseHandler):
 			mail.send_mail('noreply@example.com', question_obj.created_by.email(), 'Your question was answered', 'The answer to "' + question_obj.message + '" is "' + message_str + '"')
 
 			# Save it
+			question_obj.answer_by = users.get_current_user()
 			question_obj.answer = message_str
 			question_obj.put()
 

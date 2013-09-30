@@ -9,6 +9,7 @@ import urllib
 
 # Setup the Handlers
 from handlers.home import HomepageHandler
+from handlers.admin import ListAllQHandler
 from handlers.auth import LoginHandler, LogoutHandler
 from handlers.submit import SubmitHandler, UpdateQuestionHandler
 
@@ -26,6 +27,7 @@ app = webapp2.WSGIApplication([
 	('/login', LoginHandler),
 	('/logout', LogoutHandler),
 	('/submit', SubmitHandler),
-	('/answer', UpdateQuestionHandler)
+	('/answer', UpdateQuestionHandler),
+	('/listing', ListAllQHandler)
 
 ], debug=True, config=config)

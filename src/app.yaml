@@ -14,7 +14,6 @@ handlers:
 - url: /js
   static_dir: public/js
 
-
 - url: .*
   script: main.app
 
@@ -24,3 +23,8 @@ libraries:
 
 - name: jinja2
   version: latest
+
+admin_console:
+  pages:
+  - name: All Questions
+    url: /listing

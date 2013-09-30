@@ -9,6 +9,7 @@ class UniverseQuestion(ndb.Model):
 	created_by = ndb.UserProperty(auto_current_user_add=True)
 	message = ndb.StringProperty()
 	answer = ndb.StringProperty(default=None)
+	answer_by = ndb.UserProperty(default=None)
 	created = ndb.DateTimeProperty(auto_now_add=True)
 	lastupdated = ndb.DateTimeProperty(auto_now_add=True,auto_now=True)
 
