@@ -9,6 +9,8 @@ import urllib
 
 # Setup the Handlers
 from handlers.home import HomepageHandler
+from handlers.auth import LoginHandler, LogoutHandler
+from handlers.submit import SubmitHandler, UpdateQuestionHandler
 
 # General Config for our web application
 config = {}
@@ -20,6 +22,10 @@ config['webapp2_extras.sessions'] = {
 # going to configure now
 app = webapp2.WSGIApplication([
 
-	('/', HomepageHandler)
+	('/', HomepageHandler),
+	('/login', LoginHandler),
+	('/logout', LogoutHandler),
+	('/submit', SubmitHandler),
+	('/answer', UpdateQuestionHandler)
 
 ], debug=True, config=config)

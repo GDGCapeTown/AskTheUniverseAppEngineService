@@ -34,6 +34,9 @@ class BaseHandler(webapp2.RequestHandler):
 
 	# Our defaults
 	defaults = {
+
+		'user_obj': users.get_current_user()
+
 	}
 
 	#

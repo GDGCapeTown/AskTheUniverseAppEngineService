@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" media="all" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="/css/bootstrap.min.css?version=7" />
+		<link rel="stylesheet" href="/css/style.css?version=7" />
+
+		{% if title %}
+
+			<title>{{title}} | Question Guru</title>
+
+		{% else %}
+			
+			<title>Question Guru</title>
+
+		{% endif %}
+
+		<meta name="description" value="{{description}}" />
+		<meta name="keywords" value="{% if keywords %}, {{keywords}}{% endif %} " />
+		<meta name="author" value="{% if author %}{{author}}{% else %}Reflief Life Map{% endif %} " />
+
+		{% block head %}{% endblock %}
+		{% block styles %}{% endblock %}
+	</head>
+	<body class="gradient">
+
+		{% if show_message == True %}
+
+			<div style="margin:0;width:100%;text-align:center;" class="alert alert-success">
+				<strong style="font-size: 16px;font-weight:bold;">Thanks for the submission. We will E-Mail the answer once the universe found a answer !</strong>
+			</div>
+
+		{% endif %}
+
+		{% if show_answered == True %}
+
+			<div style="margin:0;width:100%;text-align:center;" class="alert alert-success">
+				<strong style="font-size: 16px;font-weight:bold;">The universe thanks you for your answer !</strong>
+			</div>
+
+		{% endif %}
+
+		{% if user_obj != None %}
+
+			<div class="new-question-box">
+
+				<form action="/submit" method="post">
+
+					<input name="message" placeholder="Ask the universe your Question" type="text" id="txt_new_question" />
+
+				</form>
+
+			</div>
+
+		{% endif %}
+
+		<div class="body-block">
+
+			<div class="header">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-md-6 col-md-offset-3">
+
+							<h2 class="title">Question Guru</h2>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			{% if user_obj != None %}
+
+				<div id="block-questions-list" class="section-block">
+
+					<div class="container questions-block">
+
+						<div class="row">
+
+							<div class="col-md-8 col-md-offset-2">
+
+								{% if show_question_list == True %}
+
+									<h3 class="sub-title" style="margin-bottom:12px;">Unanswered Questions the universe is still thinking about <a style="margin-left:10px;" href="/logout" class="btn btn-small btn-danger">Logout </a></h3>
+
+									<ul class="questions">
+
+										{% for question_obj in question_objs %}
+
+											<li>
+												<a href="javascript:void(0);">
+
+													<div class="qtitle">{{question_obj.message}}</div>
+													<div class="author"><i>By </i>{{question_obj.created_by.nickname()}}</div>
+
+												</a>
+
+												<div class="answer-block" style="display:none;">
+													<form action="/answer" method="post">
+														<input type="hidden" value="{{question_obj.key.id()}}" name="question_id" />
+														<input type="text" name="message" class="answer-text" placeholder="Your answer to this question" />
+														<button class="answer-btn btn btn-success">Answer</button>
+													</form>
+												</div>
+
+											</li>
+
+										{% endfor %}
+									</ul>
+
+								{% else %}
+
+									<center>
+
+										<h3 class="sub-title" style="margin-bottom:5px;">The universe has no unanswered questions, wow !</h3>
+
+										<h3 class="sub-title" style="margin-bottom:12px;font-size: 19px;">Check back later to do your part</h3>
+
+										<br />
+
+										<a style="margin-left:10px;" href="/logout" class="btn btn-small btn-danger">Logout </a>
+
+									</center>
+
+								{% endif %}
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			{% else %}
+
+				<div id="block-questions-not-logged-in" class="section-block">
+
+					<div class="container questions-block">
+
+						<div class="row">
+
+							<div class="col-md-8 col-md-offset-2">
+
+								<h3 class="sub-title">Login to question and answer questions from the universe</h3>
+
+								<center style="margin-bottom: 200px;">
+
+									<a href="/login">
+										<img src="/img/Red-signin-Google-base-44dp.png" />
+									</a>
+
+								</center>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			{% endif %}
+
+			<div class="clouds">
+				
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="/js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="/js/app.js"></script>
+
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

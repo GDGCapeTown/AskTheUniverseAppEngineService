@@ -1,5 +1,271 @@
+
+
 html, body {
-margin: 0;
-padding: 0;
-background-color:black;
+
+	margin: 0;
+	padding: 0;
+
+	font-family: "CorbelRegular", "helvetica neue", helvetica, arial, geneva, sans-serif;
+
+	background-color: white;
+
+	overflow-x: hidden;
+	
 }
+
+.body-block {
+
+	background-color: #3093e2;
+
+}
+
+header {
+
+	background: #f5f5f5;
+	background: -moz-linear-gradient(top,#fafafa,#f5f5f5);
+	background: -webkit-linear-gradient(top,#fafafa,#f5f5f5);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fafafa),color-stop(1,#f5f5f5));
+	background: linear-gradient(top,#fafafa,#f5f5f5);
+	border-bottom: 1px solid #eee;
+	color: #444;
+	min-height: 44px;
+	padding: 14px 15px 13px;
+
+}
+
+.new-question-box {
+
+	height: 80px;
+
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+	margin-top: -5px;
+
+	background-color: white;
+
+	-webkit-box-shadow: #94c1ff 0px 0px 5px;
+	-moz-box-shadow: #94c1ff 0px 0px 5px;
+	box-shadow: #94c1ff 0px 0px 5px;
+	border: 1px solid #94c1ff;
+
+}
+
+.new-question-box form {
+
+	height: 100%;
+	margin:0;
+	padding:0;
+
+	position: relative;
+	height: 79px;
+
+}
+
+.new-question-box form input {
+
+	width: 100%;
+	height: 78px;
+	margin:0;
+	padding:0;
+
+	font-size: 24px;
+	text-align: center;
+	display: block;
+	outline: none;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+
+	z-index: 100;
+
+	border: 0;
+
+}
+
+.title {
+
+	text-align: center;
+	font-weight: bold;
+	font-size: 62px;
+
+	color: white;
+	margin-top: 40px;
+
+}
+
+.sub-title {
+
+	text-align: center;
+	font-weight: 100;
+	font-size: 21px;
+
+	color: white;
+
+}
+
+.clouds {
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-moz-user-select: -moz-none;
+	background: url("/img/cloud.png");
+	background-repeat: repeat-x;
+	background-position: bottom center;
+	position: relative;
+	height: 139px;
+
+	width: 100%;
+
+}
+
+.questions-block {
+
+	padding-bottom: 20px;
+
+}
+
+.questions {
+
+	list-style: none;
+	margin:0;
+	padding:0;
+
+	background-color: white;
+
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border-radius: 12px 12px 12px 12px;
+	-moz-border-radius: 12px 12px 12px 12px;
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+	background-color: #fff;
+
+	margin-bottom: 250px;
+
+	-webkit-box-shadow: #94c1ff 0px 0px 5px;
+	-moz-box-shadow: #94c1ff 0px 0px 5px;
+	box-shadow: #94c1ff 0px 0px 5px;
+	border: 1px solid #94c1ff;
+
+}
+
+.questions li {
+
+	list-style: none;
+
+}
+
+.questions li:hover {
+
+	cursor: pointer;
+
+}
+
+.questions li a {
+
+	display: block;
+	padding: 10px 25px;
+
+}
+
+.questions li a .qtitle {
+
+	font-size: 21px;
+	color: black;
+	font-weight: bold;
+
+}
+
+.questions li a .author {
+
+	font-size: 14px;
+	font-weight: 120;
+	color: black;
+
+}
+
+.questions li a:hover {
+	
+	background-color: darkgrey;
+
+	border-radius: 12px 12px 12px 12px;
+	-moz-border-radius: 12px 12px 12px 12px;
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+
+	text-decoration: none;
+
+}
+
+.cloud {
+
+	background-image: url(/img/cloud.png);
+	background-position: 100% 0;
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #d7d7d7;
+
+	height: 350px;
+	width: 100%;
+
+}
+
+.answer-block {
+
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 42px;
+
+	display: none;
+	clear: both;
+
+	border-top: 1px solid #ccc;
+
+}
+
+.answer-block form {
+
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 42px;
+
+}
+
+.answer-block form .answer-text {
+
+	margin: 0;
+	padding: 0;
+	width: 80%;
+	height: 42px;
+	float:left;
+
+	border: 0;
+	outline: none;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+	padding-left: 15px;
+
+}
+
+.answer-block form .answer-btn {
+
+	margin: 0;
+	padding: 0;
+	width: 20%;
+	float: left;
+	height: 42px;
+
+}
+
