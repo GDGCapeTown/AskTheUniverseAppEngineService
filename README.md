@@ -1,6 +1,3 @@
-AskTheUniverseAppEngineService
-==========================
-
 # Ask the Universe ????
 
 Ask the universe a question. The simple and easy to create app that is used for Workshops on Google App Engine.
