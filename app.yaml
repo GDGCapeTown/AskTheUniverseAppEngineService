@@ -1,0 +1,30 @@
+application: asktheuniverseaquestion
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /img
+  static_dir: public/img
+
+- url: /css
+  static_dir: public/css
+
+- url: /js
+  static_dir: public/js
+
+- url: .*
+  script: asktheuniverse.main.app
+
+libraries:
+- name: webapp2
+  version: latest
+
+- name: jinja2
+  version: latest
+
+admin_console:
+  pages:
+  - name: All Questions
+    url: /listing
