@@ -14,13 +14,19 @@ handlers:
 - url: /js
   static_dir: public/js
 
+- url: /_ah/spi/.*
+  script: asktheuniverse.endpoint.app
+
 - url: .*
   script: asktheuniverse.main.app
 
 libraries:
 - name: webapp2
   version: latest
-
+- name: pycrypto
+  version: latest
+- name: endpoints
+  version: 1.0
 - name: jinja2
   version: latest
 
