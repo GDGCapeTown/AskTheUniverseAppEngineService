@@ -57,7 +57,7 @@ class AskTheUniverseService(remote.Service):
 
             )
 
-    ANSWER_METHOD_RESOURCE = endpoints.ResourceContainer(id=messages.IntegerField(1, variant=messages.Variant.UINT32,required=True),answer=messages.StringField(2, variant=messages.Variant.STRING,required=True))
+    ANSWER_METHOD_RESOURCE = endpoints.ResourceContainer(id=messages.IntegerField(1, variant=messages.Variant.UINT64,required=True),answer=messages.StringField(2, variant=messages.Variant.STRING,required=True))
     @endpoints.method(ANSWER_METHOD_RESOURCE, Question,path='questionServiceAnswer', http_method='POST',name='questionService.sendAnswer')
     def questionService_answer(self, request):
 
